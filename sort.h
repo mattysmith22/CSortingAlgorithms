@@ -8,4 +8,5 @@ void better_bubble_sort(int arr[], int len);
 void quick_sort(int arr[], int len);
 void cocktail_sort(int arr[], int len);
 void shell_sort(int arr[], int len);
+void selection_sort(int arr[], int len);
 #endif

@@ -162,3 +162,15 @@ void shell_sort(int arr[], int len)
             cocktail_sort_gapped(arr, i, len, gap);
     cocktail_sort(arr, len);
 }
+
+void selection_sort(int arr[], int len) {
+    int i, j, max_index;
+    for(i = len; i > 0; i--) {
+        max_index = 0;
+        for(j = 0; j < i; j++) {
+            if(arr[max_index] <= arr[j])
+                max_index = j;
+        }
+        swap(arr + max_index, arr + i - 1);
+    }
+}

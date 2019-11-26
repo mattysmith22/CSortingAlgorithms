@@ -10,7 +10,8 @@ const char* helpmsg = "USAGE\n"
                 "insertion\n"
                 "merge\n"
                 "quick\n"
-                "cocktail (also known as shuttle)\n";
+                "cocktail (also known as shuttle)\n"
+                "selection\n";
 
 void (*getfunc(char *strin))(int[], int);
 void printhelp();
@@ -40,6 +41,7 @@ int main(int argc, char** argv)
     sortfunc(arr, argc-2);
     for(i = 0; i < argc - 2; i++)
         printf("%d\n", arr[i]);
+    free(arr);
     
     return 0;
 }
@@ -60,6 +62,8 @@ void (*getfunc(char *strin))(int[], int)
         return cocktail_sort;
     else if(strcmp(strin, "shell")==0)
         return shell_sort;
+    else if(strcmp(strin, "selection")==0)
+        return selection_sort;
     else
         return NULL;
 }
